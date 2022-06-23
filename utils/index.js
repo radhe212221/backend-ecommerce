@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const secret = "radhemongooose2022june23";
+const secret = process.env.SALT
 
 const logger = (req, res, next) => {
   console.log(req.url, req.method);
