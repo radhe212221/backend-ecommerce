@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "upload": "node upload.js"
   },
   "keywords": [],
   "author": "",
