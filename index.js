@@ -1,9 +1,11 @@
+require('dotenv').config()
+
 const PORT = process.env.PORT || 4000;
 const express = require("express");
-const bodyParser = require("bodyParser");
+const bodyParser = require("body-parser");
 const cors = require("cors");
 const routes = require("./routes");
-const { authMiddleware } = require("./utils");
+const { authMiddleware,logger } = require("./utils");
 
 const app = express();
 app.use(logger);

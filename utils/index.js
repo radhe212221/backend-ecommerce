@@ -1,12 +1,17 @@
 const jwt = require("jsonwebtoken");
 const secret = "radhemongooose2022june23";
 
+const logger = (req, res, next) => {
+  console.log(req.url, req.method);
+  next();
+};
+
 const authMiddleware = (req, res, next) => {
   let token = req?.headers?.authorization?.split(" ")[1];
   let status = decode(token) !== null;
 
   if (status) {
-    req.uid=decode(token)?.id
+    req.uid = decode(token)?.id;
     next();
   } else {
     res.json({
@@ -34,5 +39,5 @@ module.exports = {
   authMiddleware,
   encode,
   decode,
+  logger,
 };
-
